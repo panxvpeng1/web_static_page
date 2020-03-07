@@ -46,18 +46,21 @@ filterBtns.addEventListener("click", e => {
 const headerEl = document.querySelector("header");
 window.addEventListener("scroll",()=>{
     var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-    if(scrollTop>500){
+    if(scrollTop>700){
         headerEl.classList.add('sticky')
         let burgershow = document.querySelector(".burger i");
         burgershow.style.color = "#000"
         
     }else{
         let burgershow = document.querySelector(".burger i");
-        burgershow.style.color = "#fff"
+        burgershow.style.color = "#fff";
+        
         headerEl.classList.remove('sticky')
+	
     };
 })
 
+//切换burger按钮
 let burgerShow = document.querySelector(".burger");
 let nav = document.querySelector("nav");
 let navIsShow = true;
@@ -65,11 +68,13 @@ burgerShow.addEventListener("click" ,()=>{
     if(navIsShow){
         nav.style.display = 'grid';
         navIsShow = false;
-        console.log('2')
+        let burgershow = document.querySelector(".burger i");
+        burgershow.classList = "fa fa-times fa-3x"
     }else{
         nav.style.display = 'none'
         navIsShow = true;
-        console.log('3')
+        let burgershow = document.querySelector(".burger i");
+        burgershow.classList = "fa fa-bars fa-3x"
     }
 })
 
@@ -79,6 +84,7 @@ window.addEventListener("scroll",()=>{
     var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
     if(scrollTop>2000){
         toTop.style.display="flex"
+
     }else{
         toTop.style.display="none"
     }
